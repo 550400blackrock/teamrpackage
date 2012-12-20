@@ -1,0 +1,139 @@
+\documentclass[12pt,letterpaper]{article}
+\bibliographystyle{plain}
+\bibliography{BIBTeX}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{pdfsync}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{bm}
+
+\usepackage{graphicx}
+
+
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}
+\usepackage{graphicx}
+\graphicspath{{extra/}}
+\begin{document}
+
+% The numbers below controls the amount of space between the following sections
+\def\shiftdowna{0.32in}  % Adjust for balance
+\def\shiftdownb{0.22in}  % Adjust for balance
+
+% Set up the boiler plate at the top of the page
+
+\begin{center}
+\textbf{{\large Project Work Statement}}\\
+
+
+% TITLE
+\vspace \shiftdowna
+\textbf{{\large Constructing Dedicated Porfolio against District Bond Obligations from a Simplified Scenario}}
+
+\vspace\shiftdownb
+\underline{Sponsor}\\
+\vspace{5pt}
+\text{Stone \& Youngberg}
+
+% STUDENTS
+\vspace \shiftdownb
+\underline {Participants} \\
+\vspace{5pt}
+\text{Zhenhan Zhao}, \texttt{zzhao13@jhu.edu}\\
+\text{Shihong Li}, \texttt{sli50@jhu.edu}\\
+% SPONSORS
+\vspace \shiftdownb
+\underline {Project Mentor}\\
+\vspace{5pt}
+\text{Nam Lee}, \texttt{nhlee@jhu.edu}
+
+% DATE
+\vspace{.50in}
+\vspace \shiftdowna
+Date: \today
+
+\end{center}
+
+\vfill  
+%Fill page to force following note to bottom
+\footnoterule
+\noindent \small{The work described in this work derives from simplified set of data, which is for reference only. However the strategy and algorithm stated in the work are designed to completely and efficiently resolve the situation Poway School District faces. }
+
+\newpage
+
+\section{Background} 
+Poway Unified School District is a school district located in Poway, California. The District serves approximately 33,000 students and is the third largest school district in San Diego County. Last year, the Poway Unified School District borrowed 105 million dollars from investors by selling a bond to either payoff previous debts and upgrade infrastructures. Taxpayers in the area will end up with a nearly 1 billion bill at the end of this deal. In the next two decades, taxpayers in the Poway district will have to start paying about 50 million a year to cover the total bill. One estimate says the total assessed value of property within the taxed area would have to quadruple just to cover the eventual 1 billion bill for this one bond alone.
+
+\section{Problem Statement}
+Such shocking story doesn't limit to Poway school district, similar cases happen at the San Diego Unified School district, Escondido Union School District, etc. To fulfill the annual obligation from the district bond, the district could have authorized more taxes, but it would break down the promises they made to the community and the connection with it. So the Poway school district decided to employ other means and has sought help from a local investment company named Stone \& Youngberg.  Based on the requirements of the district  council, Stone \& Youngberg has come up with a strategy to construct a dedicated portfolio that can generate future cash flow to satisfy Poway's future financial obligations. In this project, we will try to select the appropriate assets at a minimum cost but with maximum degree of matching with the bond stream obligation each period, then find the optimal proportion of each asset to construct the dedicated portfolio.
+\begin{table}[h]
+\centering  
+\begin{tabular}{cccc}
+\hline
+Date  &Liability  &Date  &Liability\\ \hline  
+7/15/2012  &6  &7/15/2016  &8\\
+1/15/2013  &6  &1/15/2017  &8\\ 
+7/15/2013  &9  &7/15/2017  &8\\ 
+1/15/2014  &9  &1/15/2018  &8\\ 
+7/15/2014  &10 &7/15/2018  &6\\ 
+1/15/2015  &10  &1/15/2019  &6\\ 
+7/15/2015  &10  &7/15/2019  &5 \\ 
+1/15/2016  &10  &1/15/2020  &5\\ \hline
+\end{tabular}
+\caption{Liability Stream.}
+\end{table}
+Consider the following is the liability stream (in million dollars) that the district is facing over the following 8 years.
+
+
+\section{Approach}
+In order to compute the present value of the liability stream, we will use two methods, polynomial regression and bootstrap methods to compute the present value of the liability stream, which resembles the characteristics of school district bond. 
+\footnote{We are not allowed to use the actual bond liability data due to confidentiality, but the dummy data we presents possesses adequate features of the actual data.}
+Then we will, based on the requirements of Poway school district council, pick a series of assets that are suitable for a lowest-cost dedicated portfolio, while can generate future cash flow to satisfy the  district future financial obligation with the minimum risk exposure over the years.Then we use the immunization strategy to make sure the portfolio we built matches both the duration and convexity of the liabilities.
+
+
+\section{Milestones}
+We have the following major deadlines:
+\begin{itemize}
+    \item Work Statement due date, Sep 28, 2012,
+    \item Midterm Presentation due date, Oct 12, 2012,
+    \item Progress Report due date, Oct 26, 2012,
+    \item Final Presentation due date, Nov 6, 2012,
+    \item Final Report due date, Nov 30, 2012.
+\end{itemize}
+
+
+\section{Deliverable}
+\subsection{From Team to Sponsor} % (fold)
+The following outputs are expected from this project:
+\begin{itemize}
+    \item The R package of calculating predicted yield curves,
+    \item The list of assets we choose for the portfolio,
+    \item The performance of the our portfolio in terms of the matching report of relevant indicators including duration,
+    \item Constructive suggestions for improvement.
+\end{itemize}
+
+\subsection{From Sponsor to Team} % (fold)
+
+In order for our project to be of successful one, we will need:
+\begin{itemize}
+    \item Discount rates for the valuation, in our case it's very likely to be the daily treasurey yield curve rates,  Oct 3, 2012,
+    \item Computing resources like Bloomberg, to pick the feasible assets to construct the portfolio, Oct 12, 2012,
+    \item Timely We also expect weekly conference calls for inquiries.
+\end{itemize}
+
+\newpage
+\begin{thebibliography}{4}  
+\bibitem{} Menchero, Jose and Benjamin Davis, 2007, ``Risk Contribution is Exposure Times Volatility Times Correlation," \emph{The Journal of Portfolio Management, 37(1).} 
+\bibitem{}  Winkelmann, Kurt, Scott McDermott, Alain Kerneis and Yevgenia Zemlyakova, 2007, ``Liability-Driven Investment Policy: Structuring the Hedging Portfolio," \emph{Goldman Sachs Asset Management Strategic Research.}
+\bibitem{}  Ross, S., 1976, ``Options and Efficiency," \emph{Quarterly Journal of Economics, 90.}
+\bibitem{}  Bates, D., 2001, ``The Market for Crash Risk," \emph{University of Iowa.}
+\end{thebibliography}
+
+
+
+
+
+\end{document}
